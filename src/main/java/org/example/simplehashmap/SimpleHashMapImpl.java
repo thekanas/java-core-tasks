@@ -36,7 +36,7 @@ public class SimpleHashMapImpl<K, V> implements SimpleHashMap<K, V> {
      * Конструктор с параметрами
      * @param capacity емкость массива баккетов
      * @param loadFactor задаёт отношение кол-ва объектов, хранящихся в SimpleHashMap,
-     *                  к емкости (capacity), при превыщении которого емкость увеличивается вдвое (х2)
+     *                  к емкости (capacity), при превышении которого емкость увеличивается вдвое (х2)
      */
     public SimpleHashMapImpl(int capacity, float loadFactor) {
         this.capacity = capacity;

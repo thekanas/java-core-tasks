@@ -9,6 +9,39 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class SimpleHashMapTest {
 
     @Test
+    void totalTestWithLargeAmountOfData() {
+        // given
+        SimpleHashMap<Integer, String> testHashMap = new SimpleHashMapImpl<>();
+        for (int i = 1; i <= 10000; i++) {
+            testHashMap.put(i, "test" + i);
+        }
+
+        // when
+        int count1 = testHashMap.size();
+
+        // then
+        assertEquals(10000, count1);
+
+        // when
+        for (int i = 5001; i <= 10000; i++) {
+            testHashMap.remove(i);
+        }
+        int count2 = testHashMap.size();
+
+        // then
+        assertEquals(5000, count2);
+
+        // when
+        for (int i = 1; i <= 10000; i++) {
+            testHashMap.put(i, "test" + i);
+        }
+        int count3 = testHashMap.size();
+
+        // then
+        assertEquals(10000, count3);
+    }
+
+    @Test
     void getTest() {
         // given
         SimpleHashMap<Integer, String> testHashMap = new SimpleHashMapImpl<>();
